@@ -35,9 +35,8 @@ public class A01HeapSort구현 {
         System.out.println("pq" + pq);  //[1, 3, 5, 6, 7, 5, 9, 8, 6]  .. 집어넣으면 최초힘 구성됨
         System.out.println(pq.poll());  // poll의 복잡도 log(n)
         pq.add(2); // add의 복잡도 log(n)
-
-
     }
+
     static void heapify(int[] arr, int parentIndex, int length) {
 //        자식노드와의 비교.
         int leftIndex = parentIndex*2+1;
