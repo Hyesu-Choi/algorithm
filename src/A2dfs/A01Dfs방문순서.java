@@ -14,7 +14,7 @@ public class A01Dfs방문순서 {
         int[][] nodes = {{0, 1}, {2, 0}, {1, 3}, {2, 3}, {2, 4}};
         visited = new boolean[5];
 
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 5; i++) {  //-> 노드가 1부터 시작되는 경우에는 반복횟수를 +1해주면 코드가 깔끔해짐
             adjList.add(new ArrayList<>());
         }
 
@@ -22,7 +22,7 @@ public class A01Dfs방문순서 {
         for (int[] n : nodes) {
 //            양방향 간선인 경우
             adjList.get(n[0]).add(n[1]);  // 양방향 간선 표현
-            adjList.get(n[1]).add(n[0]);  // ''
+            adjList.get(n[1]).add(n[0]);  // '' ->한쪽 방향이면 이거 안써도됨.
         }
 //        정점번호가 작은것부터 방문하기 위한 정렬작업
         for (List<Integer> l : adjList) {
@@ -36,7 +36,7 @@ public class A01Dfs방문순서 {
     static void dfs(int start) {
         System.out.println(start);
         visited[start] = true;
-        for (int target : adjList.get(start)) {
+        for (int target : adjList.get(start)) {  // 0부터 갈수있는곳 for문 돌려서 갈 수 있는 곳 확인.
             if (!visited[target]) {
                 dfs(target);
             }
@@ -47,5 +47,9 @@ public class A01Dfs방문순서 {
 
 // 관련문제
 // dfs와 bfs(1260) : 백준
+
+
 // 트리의 부모찾기 : 백준
+
+
 // 연결요소의 개수(11724) : 백준
